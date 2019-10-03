@@ -1,4 +1,17 @@
 <nav>
+    {{#if categories.length}}
+        <div class="sidebarBlock">
+            <h5 class="sidebarBlock-heading">Categories</h5>
+            <ul class="navList">
+                {{#each categories}}
+                <li class="navList-item">
+                    <a class="navList-action" href="{{url}}" alt="{{this.name}}" title="{{this.name}}">{{this.name}}</a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    {{/if}}
+
     {{#if category.subcategories}}
         <div class="sidebarBlock">
             <h5 class="sidebarBlock-heading">{{category.name}}</h5>
